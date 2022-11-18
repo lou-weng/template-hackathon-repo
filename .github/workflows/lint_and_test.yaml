@@ -4,7 +4,7 @@ on: pull_request
 jobs:
   ci: 
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         working-directory: ./lweng/backend
 
@@ -15,7 +15,7 @@ jobs:
 
   ci2:
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         working-directory: ./lweng/frontend
 
