@@ -4,13 +4,21 @@ on: pull_request
 jobs:
   ci: 
     runs-on: ubuntu-latest
+    default:
+      run:
+        working-directory: ./lweng/backend
+
     steps:
-      - name: step1
-        run: echo "Hello World"
+      - name: Run linter on backend
+        run: npm run lint
         
 
   ci2:
     runs-on: ubuntu-latest
+    default:
+      run:
+        working-directory: ./lweng/frontend
+
     steps:
-      - name: step2
-        run: echo "Hello World2"
+      - name: Run linter on frontend
+        run: npm run lint
