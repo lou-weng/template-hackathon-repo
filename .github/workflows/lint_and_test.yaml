@@ -2,23 +2,33 @@ name: execute linters and tests
 on: pull_request 
 
 jobs:
-  ci: 
+  ci-backend: 
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         working-directory: ./lweng/backend
 
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Install packages
+        run: npm install
+
       - name: Run linter on backend
         run: npm run lint
         
 
-  ci2:
+  ci-frontend:
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         working-directory: ./lweng/frontend
 
     steps:
+      - uses: actions/checkout@v3
+
+      - name: Install packages
+        run: npm install
+
       - name: Run linter on frontend
         run: npm run lint
