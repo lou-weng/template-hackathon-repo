@@ -10,3 +10,13 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+// ### SQS Testing ###
+
+import { SQSClient, AddPermissionCommand } from '@aws-ask/client-sqs'
+
+const client = new SQSClient({ region: "us-west-2" })
+
+
+
+// ### SNS Testing ###
